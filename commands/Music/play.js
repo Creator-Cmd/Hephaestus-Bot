@@ -6,6 +6,7 @@ const { google } = require('googleapis');
 const getYoutubePlaylistId = require('get-youtube-playlist-id');
 const Youtube = require('simple-youtube-api');
 const youtube = new Youtube(youtubeAPI);
+const savedPlaylistJSON = require('./playlists.json')
 
 
 module.exports = {
@@ -33,10 +34,10 @@ module.exports = {
         playlistCheck = new RegExp('^https://www.youtube.com/playlist')
 
 
-        async function playlist_scan() {
+        async function playlist_scan(id) {
 
             //Gets playlist information based off the URL 
-            youtube.getPlaylist(req_song)
+            youtube.getPlaylist(id)
                 .then(playlist => {
                     playlist.getVideos()
                         .then(videos => {
@@ -218,12 +219,25 @@ module.exports = {
             }
         }
 
-        if (playlistCheck.test(req_song)) {
+        function playlist(playlist) {
+            var id = getYoutubePlaylistId(playlist)
+            console.log(`URL : ${playlist} , ID : ${id}`)
+            playlist_scan(id);
+        }
 
-            var id = getYoutubePlaylistId(req_song)
-            playlist_scan(id)
+        if (playlistCheck.test(req_song)) {
+                       
+            playlist_scan(req_song)
 
         } else {
+
+            for (i = 0; i < savedPlaylistJSON.playlists.length; i++) {
+                if (savedPlaylistJSON.playlists[i].name == req_song) {
+
+                    console.log("ARGUMENTS FOUND IN SAVED PLAYLIST NAME... INIATING PLAYLIST")
+                    return playlist_scan(savedPlaylistJSON.playlists[i].url)
+                }
+            }
 
             searchYoutube(req_song)
 
