@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'stop',
 	description: 'Stops Music',
-	cooldown: 5,
+    cooldown: 5,
+    aliases: ['clear', 'quit', 's'],
 	execute(message) {
 		const { channel } = message.member.voice;
 		if (!channel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');

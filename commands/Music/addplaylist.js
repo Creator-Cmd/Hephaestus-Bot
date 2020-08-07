@@ -9,6 +9,8 @@ module.exports = {
     execute(message, args) {
 
 
+        // args = [BestOfSongs, www.youtube.com//wadawdawdawd]
+
         playlistName = args[0]
         playlistURL = args[1]
         playlistCheck = new RegExp('^https://www.youtube.com/playlist');
