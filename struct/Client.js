@@ -13,5 +13,8 @@ module.exports = class extends Client {
         this.queue = new Map();
 
         this.config = config;
+
+        this.footerMSG = "Powered by Hephaestus || Developed by DonaldJennings#7915"
+
     }
 };
