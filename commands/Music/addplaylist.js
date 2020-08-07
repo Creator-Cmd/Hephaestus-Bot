@@ -5,6 +5,7 @@ module.exports = {
     name: 'addplaylist',
     description: 'Saves playlist using name and PlaylistURL.',
     cooldown: 5,
+    usage: `<playlistName , playlistURL> NOTE : No Spaces in playlistName`, 
     aliases: ['playlistadd', 'saveplaylist', 'save'],
     execute(message, args) {
 
