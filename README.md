@@ -4,9 +4,6 @@
 
 ### Hephaestus Discord Server
 
-Click to join the [Hephaestus Discord](https://discord.gg/7WfSWj) 🎮
-
- 
 ![](images/logo.png) 
 
 ## Commands List 👾
