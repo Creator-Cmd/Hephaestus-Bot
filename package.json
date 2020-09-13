@@ -50,7 +50,7 @@
     "get-youtube-playlist-id": "0.0.1",
     "googleapis": "^52.0.0",
     "js": "^0.1.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-pre-gyp": "^0.14.0",
     "puppeteer": "^3.3.0",
     "sequelize": "^5.21.11",
