@@ -32,7 +32,30 @@
 | skip | Skips N songs| !skip <song amount>|
 | stop| Stops the player| !stop|
 | volume| Adjusts player volume| !volume <newVolume> |
- 
+
+## Installation Guide 🖥️
+Installing Hephaestus is a simple process. Currently Hephaestus doesnt have dedicated hosting so you will need to host it on your system. 
+If you want external hosting I personally use Heroku which works like magic. Takes a bit of setting up but it does the job.
+
+##### Step 1
+First clone Hephaestus onto your system and run `npm init` which sets up the NPM Environment for Hephaestus.
+##### Step 2
+Next run `npm install` to install all of the dependencies which Hephaestus uses. 
+##### Step 3
+For security reasons, I have not pushed the .env file to this repo. You will need to create one. and structure it as follows
+```
+TOKEN = YOUR_BOT_TOKEN
+OWNER_ID = YOUR_USER_ID
+PREFIX = COMMAND PREFIX
+YOUTUBE_KEY = YOUTUBE_API_KEY
+GENIUS_KEY = YOUR_GENIUS_ACCESS_TOKEN
+```
+You will need to setup a Youtube Data API V3 Connection as well as start a GeniusAPI Connection. Hephaestus handles the technical implementation of these APIs so all you need to do is put your API Credentials into the Env and Hephaestus will take it from there.
+
+##### Step 4
+Once you have completed the above steps then Hephaestus will be able to run on your server. 
+If you have any questions that you couldnt find answers to on Google. Please add me on Discord. My username is at the bottom of this page.
+
 ## Music Player 🎼
 The music playing functionality for Hephaestus requires an interaction between your client and the YoutubeAPI. This is so the bot can get information on specific videos and play them successfully
 
@@ -132,17 +155,6 @@ module.exports = {
 };
 ```
 
-## Adding Hephaestus to your bot
-
-Adding Hephaestus to your own bot is simple. For privacy and security reasons, I have not uploaded the `.env` file along with some other files. 
-Simply create a `.env` and structure it as follows
-```
-TOKEN = YOUR_BOT_TOKEN
-OWNER_ID = YOUR_USER_ID
-PREFIX = COMMAND PREFIX
-YOUTUBE_KEY = YOUTUBE_API_KEY
-GENIUS_KEY = YOUR_GENIUS_ACCESS_TOKEN
-```
 ## Information on Dev
 Donald Jennings - [@donald_jenningz](https://twitter.com/donald_jenningz) - donald.jennings2020@gmail.com - DonaldJennings#7915
 
