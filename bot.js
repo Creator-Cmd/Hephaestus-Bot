@@ -10,7 +10,7 @@ require('dotenv-flow').config();
 
 //Global Variables
 const Client = require('./struct/Client');
-const client = new Client({ token: process.env.TOKEN, prefix: process.env.PREFIX, youtubeKey: process.env.MAINTENANCE_KEY , ownerID: process.env.OWNER_ID});
+const client = new Client({ token: process.env.TOKEN, prefix: process.env.PREFIX, youtubeKey: process.env.YOUTUBE_KEY , ownerID: process.env.OWNER_ID});
 
 //Initiates the Command and Event Handlers
 fs.readdir('./Handlers/', (err, files) => {
